@@ -919,3 +919,9 @@ List<QuestionModel> vegitablesongs2 = [
   QuestionModel({Vegitable9: false,Vegitable2:false,Vegitable11:true,Vegitable3:false}),
   QuestionModel({Vegitable12: true,Vegitable2:false,Vegitable11:true,Vegitable3:false}),
 ];
+
+class MoralStory {
+  String moralstory;
+
+  MoralStory(this.moralstory);
+}MoralStory greddyDogStory = MoralStory('In a quiet village, there lived a dog known for its insatiable greed. One day, while carrying a bone in its mouth, the dog crossed a bridge over a river. As the dog looked down into the water, it saw its reflection and mistook it for another dog with a bigger bone Driven by greed, the dog barked at its own reflection, hoping to scare away the other dog and claim the larger bone. In the process, the bone in the dog\'s mouth fell into the river, lost forever. The dog realized its mistake but it was too late. The moral of the story is that greed can lead to loss, and one should be content with what they have.');

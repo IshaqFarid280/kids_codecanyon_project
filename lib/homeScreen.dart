@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kids/Pages/moral_stories.dart';
 import 'package:kids/Pages/LetsStartLearning.dart';
 import 'package:kids/utils/admob.dart';
 import 'Pages/LookAndChooes.dart';
@@ -111,7 +112,6 @@ class _HomeScreenState extends State<HomeScreen> {
                              child:Padding(
                                padding: const EdgeInsets.all(10.0),
                                child: GridView.count(
-                               physics: NeverScrollableScrollPhysics(),
                                  crossAxisCount: 2,
                                  mainAxisSpacing: 20,
                                  crossAxisSpacing: 15,
@@ -191,7 +191,29 @@ class _HomeScreenState extends State<HomeScreen> {
                                          crossAxisAlignment: CrossAxisAlignment.center,
                                          children: [
                                            Image.asset("assets/images/lione.png",height: 90,),
-                                           Text('Listen and Guess',style: TextStyle(fontFamily: "arlrdbd",color: Color(0xFF8770E4)),),
+                                           Text('Listen and Guess',style: TextStyle(fontFamily:
+                                           "arlrdbd",color: Color(0xFF8770E4)),),
+                                         ],
+                                       ),
+                                     ),
+                                   ),
+                                   InkWell(
+                                     onTap: (){
+                                       Navigator.push(context,MaterialPageRoute(builder: (context)=>MoralStories()));
+                                     },
+                                     child: Container(
+                                       decoration: BoxDecoration(
+                                         color: Color(0xfffdeef1),
+                                         borderRadius: BorderRadius.circular(10.0),
+                                       ),
+                                       child: Column(
+                                         mainAxisAlignment: MainAxisAlignment.center,
+                                         crossAxisAlignment: CrossAxisAlignment.center,
+                                         children: [
+                                           Image.asset("assets/images/kidsstories.jpeg",height: 70,),
+                                           Text('Moral Stories',style: TextStyle(fontFamily:
+                                           "arlrdbd",color: Color(
+                                               0xFF8770E4)),),
                                          ],
                                        ),
                                      ),
