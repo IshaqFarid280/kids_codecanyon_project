@@ -20,7 +20,7 @@ class ListenGuess extends StatefulWidget{
   State<ListenGuess> createState() => _ListenGuessState();
 }
 class _ListenGuessState extends State<ListenGuess> {
-  int  index;
+  int?  index;
 
   @override
   Widget build(BuildContext context) {

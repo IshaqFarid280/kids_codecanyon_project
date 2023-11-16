@@ -86,6 +86,7 @@ class _ShapequizState extends State<Shapequiz> {
                                       score +=  1;
                                       print(score);
                                       MotionToast.success(
+                                          description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 2),
                                           title: Text("Your Answer is Right",style: TextStyle(fontSize: 20),),
@@ -97,6 +98,7 @@ class _ShapequizState extends State<Shapequiz> {
                                       }
                                       );
                                       MotionToast.error(
+                                          description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 2),
                                           title: Text("Your Answer is Wrong",style: TextStyle(fontSize: 20),),

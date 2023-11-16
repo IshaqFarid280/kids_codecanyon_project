@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp>{
   Widget build(BuildContext context) {
       return  MaterialApp(
         builder: (context, widget) => ResponsiveWrapper.builder(
-            BouncingScrollWrapper.builder(context, widget),
+            BouncingScrollWrapper.builder(context, widget!),
             maxWidth: 1200,
             minWidth: 450,
             defaultScale: true,

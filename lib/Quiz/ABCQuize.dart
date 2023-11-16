@@ -14,7 +14,7 @@ class ABCQuiz extends StatefulWidget{
 List<Numbermodel> kidslist =KidsList1();
 class _ABCQuizState extends State<ABCQuiz> {
 bool isPressed = false;
-bool isselected;
+bool? isselected;
 // int i;
 Color istrue = Color(0xFFF19335);
 Color isWrong = Color(0xFFFF0000);
@@ -86,6 +86,8 @@ int score = 0;
                                               score +=  1;
                                               print(score);
                                               MotionToast.success(
+
+                                                  description: Text(''),
                                                   borderRadius: 5,
                                                   animationDuration: Duration(seconds: 2),
                                                   title: Text("Your Answer is Right",style: TextStyle(fontSize: 20),),
@@ -97,6 +99,7 @@ int score = 0;
                                                 }
                                               );
                                               MotionToast.error(
+                                                  description: Text(''),
                                                   borderRadius: 5,
                                                   animationDuration: Duration(seconds: 2),
                                                   title: Text("Your Answer is Wrong",style: TextStyle(fontSize: 20),),

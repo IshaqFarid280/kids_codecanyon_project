@@ -113,6 +113,7 @@ class _AnimalsSongState extends State<AnimalsSong> {
                                       score +=  1;
                                       print(score);
                                       MotionToast.success(
+                                        description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 3),
                                           title: Text("Your Answer is Right",style: TextStyle(fontSize: 20),),
@@ -124,6 +125,7 @@ class _AnimalsSongState extends State<AnimalsSong> {
                                       }
                                       );
                                       MotionToast.error(
+                                          description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 3),
                                           title: Text("Your Answer is Wrong",style: TextStyle(fontSize: 20),),

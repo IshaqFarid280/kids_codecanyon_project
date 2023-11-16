@@ -85,6 +85,7 @@ class _FruitquizState extends State<Fruitquiz> {
                                       score +=  1;
                                       print(score);
                                       MotionToast.success(
+                                          description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 2),
                                           title: Text("Your Answer is Right",style: TextStyle(fontSize: 20),),
@@ -96,6 +97,7 @@ class _FruitquizState extends State<Fruitquiz> {
                                       }
                                       );
                                       MotionToast.error(
+                                          description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 2),
                                           title: Text("Your Answer is Wrong",style: TextStyle(fontSize: 20),),

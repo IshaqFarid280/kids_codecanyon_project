@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreenState extends State<HomeScreen> {
 
   String url = "https://play.google.com/store/apps/details?id=" + "com.example.kids";
-   int index;
+   int index = 0;
   AdmobHelper admobHelper =  new AdmobHelper();
 @override
   void initState() {
@@ -159,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                    InkWell(
                                      onTap: (){
                                        admobHelper.showInterad();
-                                       Navigator.push(context,MaterialPageRoute(builder: (context)=>LookAndChooes(index)));
+                                       Navigator.push(context,MaterialPageRoute(builder: (context)=>LookAndChooes(index!)));
                                      },
                                      child: Container(
                                        decoration: BoxDecoration(

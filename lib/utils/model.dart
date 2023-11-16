@@ -138,7 +138,7 @@ class Numbermodel {
   String image;
   String image2;
   String Text;
-  Numbermodel({ this.image, this.image2,this.Text});
+  Numbermodel({this.image = '', this.image2 = '', this.Text = ''});
 }
 //AlphabetList
 List<Numbermodel>KidsList1() {
@@ -551,7 +551,7 @@ List<String>  vegitablevideoURL() {
   return vegitablevideoURLlist;
 }
 class QuestionModel{
-  String Text;
+  String? Text;
   Map<String, bool> answer;
 
   QuestionModel(this.answer);

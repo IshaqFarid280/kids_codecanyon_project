@@ -5,7 +5,7 @@ import 'ad_helper.dart';
 import 'app_constrant.dart';
 
 class AdmobHelper {
-  InterstitialAd _interstitialAd;
+  InterstitialAd? _interstitialAd;
   bool _islAdLoaded = false;
   int _interstitialLoadAttempts = 0;
    int maxFailedLoadAttempts = 3;
@@ -48,7 +48,7 @@ class AdmobHelper {
 
   void showInterad() {
     if (_interstitialAd != null) {
-      _interstitialAd.fullScreenContentCallback = FullScreenContentCallback(
+      _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
           onAdDismissedFullScreenContent: (InterstitialAd ad) {
             ad.dispose();
             createInterad();
@@ -56,7 +56,7 @@ class AdmobHelper {
         ad.dispose();
         createInterad();
       });
-      _interstitialAd.show();
+      _interstitialAd!.show();
     }
   }
 }
