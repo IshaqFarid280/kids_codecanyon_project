@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kids/Pages/GeneralKnowledge.dart';
 import 'package:kids/Pages/moral_stories.dart';
 import 'package:kids/Pages/LetsStartLearning.dart';
 import 'package:kids/utils/admob.dart';
@@ -214,6 +215,26 @@ class _HomeScreenState extends State<HomeScreen> {
                                            Text('Moral Stories',style: TextStyle(fontFamily:
                                            "arlrdbd",color: Color(
                                                0xFF8770E4)),),
+                                         ],
+                                       ),
+                                     ),
+                                   ),
+                                   InkWell(
+                                     onTap: (){
+                                       Navigator.push(context,MaterialPageRoute(builder: (context)=>GeneralKnowledge()));
+                                     },
+                                     child: Container(
+                                       decoration: BoxDecoration(
+                                         color: Color(0xffddfcfc),
+                                         borderRadius: BorderRadius.circular(10.0),
+                                       ),
+                                       child: Column(
+                                         mainAxisAlignment: MainAxisAlignment.center,
+                                         crossAxisAlignment: CrossAxisAlignment.center,
+                                         children: [
+                                           Image.asset("assets/images/generalKnowledge.png",height: 70,),
+                                           Text('General Knowledge',style: TextStyle(fontFamily:
+                                           "arlrdbd",color: Color(0xFFFF8D00),),),
                                          ],
                                        ),
                                      ),

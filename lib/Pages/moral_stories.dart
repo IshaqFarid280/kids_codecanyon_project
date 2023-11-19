@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:kids/MoralStories/braveTurtle.dart';
 import 'package:kids/MoralStories/greedyDog_story.dart';
+import 'package:kids/MoralStories/magicalseed.dart';
+import 'package:kids/MoralStories/thelostkitten.dart';
 import 'package:kids/MoralStories/thirstycrow_story.dart';
 
 class MoralStories extends StatefulWidget {
@@ -41,6 +44,7 @@ class _MoralStoriesState extends State<MoralStories> {
                   splashColor: Colors.orange[100],
                   onTap: (){
                     flutterTts.speak('Thirsty Crow');
+                    debugPrint('Thirsty Cros');
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> ThirstyCros()));
                   },
                   child: Container(
@@ -95,8 +99,8 @@ class _MoralStoriesState extends State<MoralStories> {
                 InkWell(
                   splashColor: Colors.orange[100],
                   onTap: (){
-                    flutterTts.speak('Thirsty Crow');
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ThirstyCros()));
+                    flutterTts.speak('The Lost Kitten');
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> TheLostKitten()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -107,7 +111,7 @@ class _MoralStoriesState extends State<MoralStories> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/thirstyCrow.png',height: 90,),
+                          Image.asset('assets/images/thelostkitten.jpg',height: 90,),
                           Container(
                               height: 45,
                               width: 200,
@@ -115,15 +119,15 @@ class _MoralStoriesState extends State<MoralStories> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.orange[100]
                               ),
-                              child: Center(child: Text('Thirsty Crow',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
+                              child: Center(child: Text('Lost Kitten',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
                     ),
                   ),
                 ),
                 InkWell(
                   splashColor: Colors.orange[100],
                   onTap: (){
-                    flutterTts.speak('Greedy Dog');
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>GreedyDo()));
+                    flutterTts.speak('The Magic Seed');
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MagicalSeed()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -134,7 +138,7 @@ class _MoralStoriesState extends State<MoralStories> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/greeedydog.jpeg',height: 90),
+                          Image.asset('assets/images/themagicalseed.jpeg',height: 90),
                           Container(
                               height: 45,
                               width: 200,
@@ -142,7 +146,7 @@ class _MoralStoriesState extends State<MoralStories> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.orange[100]
                               ),
-                              child: Center(child: Text('GreedyDog',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),
+                              child: Center(child: Text('Magical Seed', style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),
                         ]
                     ),
                   ),
@@ -150,8 +154,8 @@ class _MoralStoriesState extends State<MoralStories> {
                 InkWell(
                   splashColor: Colors.orange[100],
                   onTap: (){
-                    flutterTts.speak('Thirsty Crow');
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ThirstyCros()));
+                    flutterTts.speak('The Brave Little Turtle');
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> BraveTurtle()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -162,7 +166,7 @@ class _MoralStoriesState extends State<MoralStories> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/thirstyCrow.png',height: 90,),
+                          Image.asset('assets/images/littleturtle.jpeg',height: 90,),
                           Container(
                               height: 45,
                               width: 200,
@@ -170,93 +174,11 @@ class _MoralStoriesState extends State<MoralStories> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.orange[100]
                               ),
-                              child: Center(child: Text('Thirsty Crow',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
+                              child: Center(child: Text('Brave Little Turtle',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
                     ),
                   ),
                 ),
-                InkWell(
-                  splashColor: Colors.orange[100],
-                  onTap: (){
-                    flutterTts.speak('Greedy Dog');
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>GreedyDo()));
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.orange[50],
-                    ),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/greeedydog.jpeg',height: 90),
-                          Container(
-                              height: 45,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.orange[100]
-                              ),
-                              child: Center(child: Text('GreedyDog',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),
-                        ]
-                    ),
-                  ),
-                ),
-                InkWell(
-                  splashColor: Colors.orange[100],
-                  onTap: (){
-                    flutterTts.speak('Thirsty Crow');
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ThirstyCros()));
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.orange[50],
-                    ),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/thirstyCrow.png',height: 90,),
-                          Container(
-                              height: 45,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.orange[100]
-                              ),
-                              child: Center(child: Text('Thirsty Crow',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                    ),
-                  ),
-                ),
-                InkWell(
-                  splashColor: Colors.orange[100],
-                  onTap: (){
-                    flutterTts.speak('Greedy Dog');
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>GreedyDo()));
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.orange[50],
-                    ),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/greeedydog.jpeg',height: 90),
-                          Container(
-                              height: 45,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.orange[100]
-                              ),
-                              child: Center(child: Text('GreedyDog',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),
-                        ]
-                    ),
-                  ),
-                ),
+
               ],
             ),
           )

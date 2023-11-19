@@ -2,18 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:kids/MoralStories/greedyDog_story.dart';
+import 'package:kids/MoralStories/magicalseed.dart';
+import 'package:kids/MoralStories/thirstycrow_story.dart';
 import 'package:kids/utils/model.dart';
 
-class ThirstyCros extends StatefulWidget {
+class BraveTurtle extends StatefulWidget {
+
   @override
-  State<ThirstyCros> createState() => _ThirstyCrosState();
+  State<BraveTurtle> createState() => _BraveTurtleState();
 }
 
-class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin {
+class _BraveTurtleState extends State<BraveTurtle> with TickerProviderStateMixin {
   final FlutterTts flutterTts = FlutterTts();
 
-  MoralStory thirstyCrowStory = MoralStory(
-      'Once upon a scorching summer day, a clever crow felt the pangs of thirst. The crow searched high and low for water but found only dry, barren land. Desperate, the crow noticed a pitcher with a small amount of water at the bottom. However, the water level was too low for the crow to reach. Undeterred, the intelligent crow had an idea. It started picking up small pebbles and dropping them into the pitcher, one by one. The water level gradually rose, and the clever crow quenched its thirst. The moral of the story is that ingenuity and resourcefulness can help overcome even the most challenging situations.');
+  bool isPressed = false;
+  MoralStory braveTutle = MoralStory(
+      'Tommy, a tiny turtle, was afraid of water. One day, when a fire broke out in the forest, he overcame his fear and carried drops of water on his shell to put out the flames. The other animals admired his bravery, and Tommy realized that sometimes, facing our fears can lead to extraordinary acts of courage.');
 
   List<String> captions = [];
   late AnimationController _animationController;
@@ -27,25 +31,25 @@ class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin
 
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 37500),
+      duration: const Duration(milliseconds: 16500),
     )..addListener(() {
-        setState(() {
-          // Update the currentCaptionIndex based on the animation value
-          currentCaptionIndex =
-              (_animationController.value * captions.length).toInt();
-        });
+      setState(() {
+        // Update the currentCaptionIndex based on the animation value
+        currentCaptionIndex =
+            (_animationController.value * captions.length).toInt();
       });
+    });
   }
 
   speakStory() async {
-    await flutterTts.speak(thirstyCrowStory.moralstory);
+    await flutterTts.speak(braveTutle.moralstory);
     _animationController.forward(
         from: 0.0); // Reset animation when speaking is finished
   }
 
   generateCaptions() {
     // Split the story into sentences and add them as captions
-    captions = thirstyCrowStory.moralstory.split('. ');
+    captions = braveTutle.moralstory.split('. ');
   }
 
   @override
@@ -72,7 +76,7 @@ class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin
           elevation: 0,
           title: Center(
             child: Text(
-              'Thirsty Crow',
+              'Brave Little Turtle',
               style: TextStyle(color: Colors.black, fontFamily: "arlrdbd"),
             ),
           ),
@@ -84,7 +88,7 @@ class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin
             children: [
               Center(
                 child: Image.asset(
-                  'assets/images/thirstyCrow.png',
+                  'assets/images/littleturtle.jpeg',
                   height: 200,
                 ),
               ),
@@ -94,9 +98,9 @@ class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin
                   animation: _animationController,
                   builder: (context, child) {
                     final String currentCaption =
-                        currentCaptionIndex < captions.length
-                            ? captions[currentCaptionIndex]
-                            : '';
+                    currentCaptionIndex < captions.length
+                        ? captions[currentCaptionIndex]
+                        : '';
                     return RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
@@ -125,7 +129,7 @@ class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin
               SizedBox(
                 height: 20,
               ),
-      
+
               Padding(
                 padding: const EdgeInsets.only(bottom: 18.0),
                 child: Column(
@@ -146,23 +150,23 @@ class _ThirstyCrosState extends State<ThirstyCros> with TickerProviderStateMixin
                               : 'assets/images/11MaskGroup3.png')),
                       Center(
                           child: ListTile(
-                        trailing: InkWell(
-                          onTap: () {
-                            Navigator.push(context, CupertinoPageRoute(builder: (ctx) => GreedyDo()));
-                    },
-                          child: Image(
-                            image: AssetImage('assets/images/11MaskGroup5.png'),
-                          ),
-                        ),
-                        leading: InkWell(
-                          onTap:  () {
-                            Navigator.of(context).push(CupertinoPageRoute(builder: (ctx) => GreedyDo()));
-                          },
-                          child: Image(
-                            image: AssetImage('assets/images/11MaskGroup4.png'),
-                          ),
-                        ),
-                      )),
+                            trailing: InkWell(
+                              onTap: () {
+                                Navigator.push(context, CupertinoPageRoute(builder: (ctx) => MagicalSeed()));
+                              },
+                              child: Image(
+                                image: AssetImage('assets/images/11MaskGroup5.png'),
+                              ),
+                            ),
+                            leading: InkWell(
+                              onTap:  () {
+                                Navigator.of(context).push(CupertinoPageRoute(builder: (ctx) => ThirstyCros()));
+                              },
+                              child: Image(
+                                image: AssetImage('assets/images/11MaskGroup4.png'),
+                              ),
+                            ),
+                          )),
                     ]),
               ),
             ],

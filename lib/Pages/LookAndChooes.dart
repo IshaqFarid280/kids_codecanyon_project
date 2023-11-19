@@ -67,33 +67,33 @@ class LookAndChooes extends StatelessWidget{
                       ),
                     ),
                   ),
-                  InkWell(
-                    splashColor: Colors.orange[100],
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Numberquiz()));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Colors.orange[50],
-                      ),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/images/Numbers.png',height: 90),
-                            Container(
-                                height: 45,
-                                width: 200,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.orange[100]
-                                ),
-                                child: Center(child: Text('Number Songs',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),
-                          ]
-                      ),
-                    ),
-                  ),
+                  // InkWell(
+                  //   splashColor: Colors.orange[100],
+                  //   onTap: (){
+                  //     Navigator.push(context, MaterialPageRoute(builder: (context)=>Numberquiz()));
+                  //   },
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(10.0),
+                  //       color: Colors.orange[50],
+                  //     ),
+                  //     child: Column(
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         crossAxisAlignment: CrossAxisAlignment.center,
+                  //         children: [
+                  //           Image.asset('assets/images/Numbers.png',height: 90),
+                  //           Container(
+                  //               height: 45,
+                  //               width: 200,
+                  //               decoration: BoxDecoration(
+                  //                   borderRadius: BorderRadius.circular(10),
+                  //                   color: Colors.orange[100]
+                  //               ),
+                  //               child: Center(child: Text('Number Songs',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),
+                  //         ]
+                  //     ),
+                  //   ),
+                  // ),
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){

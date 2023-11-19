@@ -138,8 +138,25 @@ class Numbermodel {
   String image;
   String image2;
   String Text;
-  Numbermodel({this.image = '', this.image2 = '', this.Text = ''});
+  String text1;
+  Numbermodel({this.image = '', this.image2 = '', this.Text = '', this.text1 = ''});
 }
+
+List<Numbermodel>generalKnowledge() {
+  List<Numbermodel> kidslist = [];
+  kidslist.add(Numbermodel(text1: 'Capital of Pakistan?',Text: 'B'));
+  kidslist.add(Numbermodel(text1: 'Largest city in Pakistan?',Text: 'C'));
+  kidslist.add(Numbermodel(text1: 'National language of Pakistan?',Text: 'A'));
+  kidslist.add(Numbermodel(text1: 'Currency of Pakistan?',Text: 'B'));
+  kidslist.add(Numbermodel(text1: 'Founder of Pakistan?',Text: 'C'));
+  kidslist.add(Numbermodel(text1: 'Longest river in Pakistan?',Text: 'D'));
+  kidslist.add(Numbermodel(text1: 'Highest mountain in Pakistan?',Text: 'C'));
+  kidslist.add(Numbermodel(text1: 'Pakistan\'s national animal?',Text: 'A'));
+  kidslist.add(Numbermodel(text1: 'Independence year of Pakistan?',Text: 'C'));
+  kidslist.add(Numbermodel(text1: 'Largest province of Pakistan by area?',Text: 'C'));
+  return kidslist;
+}
+
 //AlphabetList
 List<Numbermodel>KidsList1() {
   List<Numbermodel> kidslist = [];
@@ -158,6 +175,8 @@ List<Numbermodel>KidsList1() {
   kidslist.add(Numbermodel(image: Y,Text: 'Y'));kidslist.add(Numbermodel(image: Z,Text: 'Z'));
   return kidslist;
 }
+
+
 //NumbersList
 List<Numbermodel> NumberList() {
   List<Numbermodel> list = [];
@@ -550,6 +569,8 @@ List<String>  vegitablevideoURL() {
   vegitablevideoURLlist.add("https://www.youtube.com/watch?v=utwgf_G91Eo");
   return vegitablevideoURLlist;
 }
+
+
 class QuestionModel{
   String? Text;
   Map<String, bool> answer;
@@ -557,6 +578,18 @@ class QuestionModel{
   QuestionModel(this.answer);
 }
 
+List<QuestionModel> generalknowledgequestions = [
+  QuestionModel({"Karachi": false,"Islamabad":true,"Lahore":false,"Quetta":false,}),
+  QuestionModel({"Islamabad": false,"Lahore":false,"Karachi":true,"Peshawar":false,}),
+  QuestionModel({"Urdu": true,"Punjabi":false,"Sindhi":false,"English":false,}),
+  QuestionModel({"Taka": false,"Rupee":true,"Rial":false,"Dinar":false,}),
+  QuestionModel({"Jawaharlal Nehru": false,"Liaquat Ali Khan":false,"Muhammad Ali Jinnah":true,"Allama Iqbal":false,}),
+  QuestionModel({"Chenab": false,"Jhelum":false,"Sutlej":false,"Indus":true,}),
+  QuestionModel({"Tirich Mir": false," Nanga Parbat":false,"K2":true,"Rakaposhi":false,}),
+  QuestionModel({"Markhor": true,"Snow Leopard":false,"Lion":false,"Bengal Tiger":false,}),
+  QuestionModel({"1945": false,"1946":false,"1947":true,"1948":false,}),
+  QuestionModel({"Punjab": false,"Sindh":false,"Balochistan":true,"Khyber PakhtunKhawa":false,}),
+];
 List<QuestionModel> questions = [
   QuestionModel({"Dog": false,"Horse":false,"Apple":true,"Queen":false,}),
   QuestionModel({"King": false,"Cat":false,"Apple":false,"Ball":true,}),
@@ -924,4 +957,4 @@ class MoralStory {
   String moralstory;
 
   MoralStory(this.moralstory);
-}MoralStory greddyDogStory = MoralStory('In a quiet village, there lived a dog known for its insatiable greed. One day, while carrying a bone in its mouth, the dog crossed a bridge over a river. As the dog looked down into the water, it saw its reflection and mistook it for another dog with a bigger bone Driven by greed, the dog barked at its own reflection, hoping to scare away the other dog and claim the larger bone. In the process, the bone in the dog\'s mouth fell into the river, lost forever. The dog realized its mistake but it was too late. The moral of the story is that greed can lead to loss, and one should be content with what they have.');
+}
