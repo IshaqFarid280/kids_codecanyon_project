@@ -13,6 +13,8 @@ import 'package:kids/VideoLearning/VegitableVideo.dart';
 import 'package:kids/VideoLearning/colorvideo.dart';
 import 'package:kids/utils/admob.dart';
 
+import '../VideoLearning/vedio_screen.dart';
+
 class VideoLearning extends StatefulWidget{
   @override
   State<VideoLearning> createState() => _VideoLearningState();
@@ -50,7 +52,7 @@ class _VideoLearningState extends State<VideoLearning> {
                     splashColor: Colors.orange[100],
                     onTap: (){
                       // admobHelper.showInterad();
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ABCVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/abc.mp4',name: 'ABCD',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -103,7 +105,7 @@ class _VideoLearningState extends State<VideoLearning> {
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ColorVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/color.mp4',name: 'Colors')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -130,7 +132,7 @@ class _VideoLearningState extends State<VideoLearning> {
                     splashColor: Colors.orange[100],
                     onTap: (){
                       admobHelper.showInterad();
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ShapeVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/shapes.mp4',name: 'Shapes')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -157,7 +159,7 @@ class _VideoLearningState extends State<VideoLearning> {
                     splashColor: Colors.orange[100],
                     onTap: (){
                       admobHelper.showInterad();
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> AnimalVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/animal.mp4',name: 'Animals')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -183,7 +185,7 @@ class _VideoLearningState extends State<VideoLearning> {
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> BirdVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/birds.mp4',name: 'Birds')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -209,7 +211,7 @@ class _VideoLearningState extends State<VideoLearning> {
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> FlowerVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/flowers.mp4',name: 'FLowers')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -236,7 +238,7 @@ class _VideoLearningState extends State<VideoLearning> {
                     splashColor: Colors.orange[100],
                     onTap: (){
                       admobHelper.showInterad();
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> FruitVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/fruits.mp4',name: 'Fruits')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -262,7 +264,7 @@ class _VideoLearningState extends State<VideoLearning> {
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> MonthVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/months.mp4',name: 'months')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -289,7 +291,7 @@ class _VideoLearningState extends State<VideoLearning> {
                     splashColor: Colors.orange[100],
                     onTap: (){
                       // admobHelper.showInterad();
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> VegitableVideo()));
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/vegetables.mp4',name: 'Vegetables')));
                     },
                     child: Container(
                       decoration: BoxDecoration(

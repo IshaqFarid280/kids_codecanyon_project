@@ -5,6 +5,8 @@ import 'package:kids/utils/admob.dart';
 import 'package:kids/utils/model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'vedio_screen.dart';
+
 
 
 class ABCVideo extends StatefulWidget{
@@ -42,8 +44,7 @@ class _ABCVideoState extends State<ABCVideo> {
               return   InkWell(
                   splashColor: Colors.redAccent,
                   onTap: () {
-                    _launchYoutubeVideo(alphabetvideoURLlist[index]);
-                 print(alphabetvideoURLlist[index]);
+                   Navigator.push(context, CupertinoPageRoute(builder: (context)=> VideoScreen(vedioPath: 'assets/abc.mp4',name: 'Alphabets',)));
                   },
                   child: Card(
                     color: Color(0xFFEBE8FD),
