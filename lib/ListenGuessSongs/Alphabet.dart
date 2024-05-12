@@ -5,8 +5,6 @@ import 'package:kids/utils/model.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 
-
-
 class AlphabetSong extends StatefulWidget{
 
   @override
@@ -99,7 +97,8 @@ class _AlphabetSongState extends State<AlphabetSong> {
                                           description: Text(''),
                                           borderRadius: 5,
                                           animationDuration: Duration(seconds: 3),
-                                          title: Text("Your Answer is Right",style: TextStyle(fontSize: 20),),
+                                          title: Text("Your Answer is Right",style: TextStyle(fontSize: 20),
+                                          ),
                                           iconType: ICON_TYPE.cupertino
                                       ).show(context);
                                     }else{

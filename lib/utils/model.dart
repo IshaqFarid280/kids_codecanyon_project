@@ -590,6 +590,8 @@ List<QuestionModel> generalknowledgequestions = [
   QuestionModel({"1945": false,"1946":false,"1947":true,"1948":false,}),
   QuestionModel({"Punjab": false,"Sindh":false,"Balochistan":true,"Khyber PakhtunKhawa":false,}),
 ];
+
+
 List<QuestionModel> questions = [
   QuestionModel({"Dog": false,"Horse":false,"Apple":true,"Queen":false,}),
   QuestionModel({"King": false,"Cat":false,"Apple":false,"Ball":true,}),
