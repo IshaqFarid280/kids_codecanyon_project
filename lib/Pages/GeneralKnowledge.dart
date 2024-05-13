@@ -166,7 +166,7 @@ class _GeneralKnowledgeState extends State<GeneralKnowledge> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            ResultSrceen(score)));
+                                            ResultScreen(score)));
                               }
                                   : () {
                                 _controller.nextPage(
@@ -202,14 +202,72 @@ class _GeneralKnowledgeState extends State<GeneralKnowledge> {
   }
 }
 
-class ResultSrceen extends StatefulWidget {
+
+
+
+
+
+class ResultScreen extends StatefulWidget {
   final int score;
-  ResultSrceen(this.score);
+
+  ResultScreen(this.score);
+
   @override
-  _ResultSrceenState createState() => _ResultSrceenState();
+  _ResultScreenState createState() => _ResultScreenState();
 }
 
-class _ResultSrceenState extends State<ResultSrceen> {
+class _ResultScreenState extends State<ResultScreen> {
+  String _congratulationsMessage = "Congratulations";
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Using Future.delayed to show the AlertDialog after build method has completed
+    Future.delayed(Duration.zero, _showScoreMessage);
+  }
+
+  void _showScoreMessage() {
+    if (widget.score >= 7) {
+      _congratulationsMessage =  "Congratulations, you passed! 🎉";
+      setState(() {});
+    } else if (widget.score >= 5) {
+      _congratulationsMessage = "Congratulations, you got an average score! 😀";
+      setState(() {});
+    } else {
+      _congratulationsMessage = "You need to work harder ! 💪";
+      setState(() {});
+    }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 300),
+          child: AlertDialog(
+            backgroundColor: Colors.black,
+            content: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('$_congratulationsMessage',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                SizedBox(height: 30,),
+                Text('Your score is ${widget.score}',style: TextStyle(color: Colors.yellowAccent,fontSize: 30),),
+              ],
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text("OK",style: TextStyle(color: Colors.white,fontSize: 20),),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -218,31 +276,47 @@ class _ResultSrceenState extends State<ResultSrceen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
-              child: Text(
-                "Congratulation",
-                style: TextStyle(
-                    color: Colors.black, fontFamily: "arlrdbd", fontSize: 38.0),
-              )),
+            child: Text(
+              _congratulationsMessage,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontFamily: "arlrdbd",
+                fontSize: 25.0,
+              ),
+            ),
+          ),
+          SizedBox(height: 30,),
           Center(
-              child: Text(
-                "Your Score is:",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: "arlrdbd",
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w500),
-              )),
+            child: Text(
+              "Your Score is:",
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: "arlrdbd",
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           SizedBox(
             height: 50.0,
           ),
           Center(
-              child: Text(
-                "${widget.score}",
-                style: TextStyle(
-                    color: Colors.black, fontFamily: "arlrdbd", fontSize: 80.0),
-              ))
+            child: Text(
+              "${widget.score}",
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: "arlrdbd",
+                fontSize: 80.0,
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+
+
+
