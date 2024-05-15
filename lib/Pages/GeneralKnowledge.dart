@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
@@ -218,98 +221,106 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
   String _congratulationsMessage = "Congratulations";
+  late ConfettiController _controller;
+  late String _resultImageAsset;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    // Using Future.delayed to show the AlertDialog after build method has completed
-    Future.delayed(Duration.zero, _showScoreMessage);
+  void initState() {
+    super.initState();
+    _controller = ConfettiController(duration: const Duration(seconds: 5));
+    _showScoreMessage();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   void _showScoreMessage() {
     if (widget.score >= 7) {
-      _congratulationsMessage =  "Congratulations, you passed! 🎉";
-      setState(() {});
+      _congratulationsMessage = "Congratulations, you passed! 🎉";
+      _resultImageAsset = 'assets/start.png';
     } else if (widget.score >= 5) {
       _congratulationsMessage = "Congratulations, you got an average score! 😀";
-      setState(() {});
+      _resultImageAsset = 'assets/thumbs.png';
     } else {
       _congratulationsMessage = "You need to work harder ! 💪";
-      setState(() {});
+      _resultImageAsset = 'assets/cry.png';
     }
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 300),
-          child: AlertDialog(
-            backgroundColor: Colors.black,
-            content: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('$_congratulationsMessage',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                SizedBox(height: 30,),
-                Text('Your score is ${widget.score}',style: TextStyle(color: Colors.yellowAccent,fontSize: 30),),
-              ],
-            ),
-            actions: <Widget>[
-              TextButton(
-                child: Text("OK",style: TextStyle(color: Colors.white,fontSize: 20),),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          ),
-        );
-      },
-    );
+    _controller.play();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Stack(
         children: [
-          Center(
-            child: Text(
-              _congratulationsMessage,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: "arlrdbd",
-                fontSize: 25.0,
-              ),
-            ),
+          ConfettiWidget(
+            numberOfParticles: 20,
+            emissionFrequency: 0.3,
+            confettiController: _controller,
+            blastDirectionality: BlastDirectionality.explosive,
+            shouldLoop: true,
+            colors: const [
+              Colors.green,
+              Colors.blue,
+              Colors.pink,
+              Colors.orange,
+              Colors.purple,
+            ],
           ),
-          SizedBox(height: 30,),
-          Center(
-            child: Text(
-              "Your Score is:",
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: "arlrdbd",
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  _congratulationsMessage,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontFamily: "arlrdbd",
+                    fontSize: 25.0,
+                  ),
+                ),
               ),
-            ),
-          ),
-          SizedBox(
-            height: 50.0,
-          ),
-          Center(
-            child: Text(
-              "${widget.score}",
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: "arlrdbd",
-                fontSize: 80.0,
+              SizedBox(height: 30),
+              Center(
+                child: Text(
+                  "Your Score is:",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: "arlrdbd",
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
+              SizedBox(
+                height: 50.0,
+              ),
+              Center(
+                child: Image.asset(
+                  _resultImageAsset,
+                  width: 200, // Adjust width as needed
+                  height: 200, // Adjust height as needed
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Center(
+                child: Text(
+                  "${widget.score}",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: "arlrdbd",
+                    fontSize: 80.0,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
