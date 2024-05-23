@@ -16,7 +16,7 @@ List<Numbermodel> alphabetvideolist = alphabetvideo1();
 List<String> alphabetvideoURLlist = alphabetvideoURL();
 
 class _ABCVideoState extends State<ABCVideo> {
-  Future<void> _launchYoutubeVideo(String url) async {
+  Future<void>  _launchYoutubeVideo(String url) async {
         await launch(url);
   }
   @override
