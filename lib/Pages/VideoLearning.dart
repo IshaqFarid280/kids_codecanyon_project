@@ -123,9 +123,9 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Color Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                        ),
                       ),
-                   ),
+                    ),
+                  ),
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){
@@ -177,9 +177,9 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Animal Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                       ),
-                     ),
-                   ),
+                      ),
+                    ),
+                  ),
                   InkWell(
                     splashColor: Colors.orange[100],
                     onTap: (){
@@ -203,8 +203,8 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Bird Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                       ),
-                     ),
+                      ),
+                    ),
                   ),
                   InkWell(
                     splashColor: Colors.orange[100],
@@ -229,8 +229,8 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Flower Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                       ),
-                     ),
+                      ),
+                    ),
                   ),
                   InkWell(
                     splashColor: Colors.orange[100],
@@ -256,8 +256,8 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Fruit Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                       ),
-                     ),
+                      ),
+                    ),
                   ),
                   InkWell(
                     splashColor: Colors.orange[100],
@@ -282,7 +282,7 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Month Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                       ),
+                      ),
                     ),
                   ),
                   InkWell(
@@ -309,12 +309,12 @@ class _VideoLearningState extends State<VideoLearning> {
                                     color: Colors.orange[100]
                                 ),
                                 child: Center(child: Text('Vegetable Video',style: TextStyle(color: Colors.black,fontFamily: "arlrdbd",fontSize: 18),))),                          ]
-                       ),
-                     ),
-                   )
-                 ]
-              ),
-           ),
+                      ),
+                    ),
+                  )
+                ]
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: Container(
